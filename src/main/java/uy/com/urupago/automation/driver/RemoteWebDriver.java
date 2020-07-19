@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import uy.com.urupago.automation.config.AutomationProperties;
@@ -13,11 +14,11 @@ import java.net.URI;
 @RequiredArgsConstructor
 @Configuration
 @Profile("remote")
-public class RemoteWebDriver implements MyWebDriver {
+public class RemoteWebDriver{
 
     private final AutomationProperties properties;
 
-    @Override
+    @Bean
     public WebDriver webDriver() throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setPlatform(Platform.LINUX);
