@@ -1,0 +1,12 @@
+automation:
+  drivers:
+    chrome:
+      driver-path: a
+    firefox:
+      driver-path: b
+    remote:
+      driver-path: c
+
+spring:
+  profiles:
+    active: chrome
