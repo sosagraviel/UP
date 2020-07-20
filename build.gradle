@@ -28,6 +28,21 @@ dependencies {
 	implementation "org.seleniumhq.selenium:selenium-java:3.141.59"
 
 	compileOnly 'org.projectlombok:lombok'
+	// https://mvnrepository.com/artifact/io.cucumber/cucumber-core
+	compile group: 'io.cucumber', name: 'cucumber-core', version: '6.2.2'
+	// https://mvnrepository.com/artifact/io.cucumber/cucumber-java
+	compile group: 'io.cucumber', name: 'cucumber-java', version: '6.2.2'
+	// https://mvnrepository.com/artifact/io.cucumber/tag-expressions
+	compile group: 'io.cucumber', name: 'tag-expressions', version: '3.0.0'
+	// https://mvnrepository.com/artifact/io.cucumber/cucumber-testng
+	compile group: 'io.cucumber', name: 'cucumber-testng', version: '6.2.2'
+	// https://mvnrepository.com/artifact/com.opencsv/opencsv
+	compile group: 'com.opencsv', name: 'opencsv', version: '5.2'
+	// https://mvnrepository.com/artifact/commons-io/commons-io
+	compile group: 'commons-io', name: 'commons-io', version: '2.7'
+	// https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+	compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-alpha-6'
+
 
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
@@ -45,6 +60,28 @@ dependencies {
 	testImplementation("io.cucumber:cucumber-html:0.2.7")
 	testImplementation("io.cucumber:cucumber-jvm-deps:1.0.6")
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	// https://mvnrepository.com/artifact/net.sourceforge.cobertura/cobertura
+	testCompile group: 'net.sourceforge.cobertura', name: 'cobertura', version: '2.1.1'
+	// https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+	testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.0-M1'
+	// https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core
+	testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '2.2'
+	// https://mvnrepository.com/artifact/io.cucumber/cucumber-junit
+	testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '6.2.2'
+	// https://mvnrepository.com/artifact/io.qameta.allure/allure-junit4
+	testCompile group: 'io.qameta.allure', name: 'allure-junit4', version: '2.13.5'
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 test {
