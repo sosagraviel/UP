@@ -1,13 +1,14 @@
-package POM;
+package uy.com.urupago.automation.POM;
 
+import io.cucumber.java8.En;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import utilities.WaitHelper;
+import uy.com.urupago.automation.utilities.WaitHelper;
 
-public class POMCajaApertura {
+public class POMCajaApertura implements En {
     public WebDriver webDriver;
     public WaitHelper waitHelper;
     public Actions actions;

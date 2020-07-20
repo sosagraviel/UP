@@ -1,4 +1,4 @@
-package uy.com.urupago.automation.Definitions;
+package uy.com.urupago.automation.stepsDefinitions;
 
 import io.cucumber.java8.En;
 import org.openqa.selenium.By;

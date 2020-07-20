@@ -1,17 +1,21 @@
-package stepsDefinitions;
+package uy.com.urupago.automation.stepsDefinitions;
 
-import POM.POMaddCustomer;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import uy.com.urupago.automation.POM.POMaddCustomer;
 
 public class stepsAddCustomer extends baseClass{
     public String auxUser="";
     public POMaddCustomer poMaddCustomer;
     private baseClass base;
+    public stepsDefinitionCaja d;
 
-public stepsAddCustomer(baseClass base){
+
+
+    public stepsAddCustomer(baseClass base){
     this.base=base;
 }
 

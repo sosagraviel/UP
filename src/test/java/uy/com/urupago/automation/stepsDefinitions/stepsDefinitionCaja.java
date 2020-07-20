@@ -1,9 +1,10 @@
-package stepsDefinitions;
+package uy.com.urupago.automation.stepsDefinitions;
 
-import POM.POMCajaApertura;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import uy.com.urupago.automation.POM.POMCajaApertura;
 
 public class stepsDefinitionCaja extends baseClass{
     public POMCajaApertura pomCajaApertura;
