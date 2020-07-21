@@ -8,11 +8,13 @@ Feature: Login
     And User Enter UserName and password
     #And User Enter UserName as "rgonzalez" and password as "Password.01"
     And Click on Login
-    Then Page Title Should be
-    #Then Page Title Should be "Urupago - Cobros realizados" and "<value>" as "<password>"
+    #Then Page Title Should bes "<value>"
+    Then Page Title Should be "Urupago - Cobros realizados" and "<value>" as "<password>"
     And close browser
 
-    #Login Usuario o contraseña incorrecta
+
+
+     #Login Usuario o contraseña incorrecta
   #Login Usuario o contraseña vacíos
   @SmokeTest @RegressionTest
   Scenario Outline: Unsuccessful Login Data Driven
@@ -22,8 +24,8 @@ Feature: Login
     And User Enter UserName and password
     #And User Enter UserName as "<user>" and password as "<password>"
     And Click on Login
-    Then Page Title Should be
-    #Then Page Title Should be "Urupago - Login" and "<user>" as "<password>"
+    #Then Page Title Should be
+    Then Page Title Should be "Urupago - Login" and "<user>" as "<password>"
     And close browser
 
     Examples:
@@ -41,8 +43,8 @@ Feature: Login
     And User Enter UserName and password
     #And User Enter UserName as "<user>" and password as "<password>"
     And Click on Login
-    Then Page Title Should be
-    #Then Page Title Should be "Urupago - Login" and "<value>" as "<password>"
+   # Then Page Title Should be
+    Then Page Title Should be "Urupago - Login" and "<value>" as "<password>"
     And close browser
 
     Examples:

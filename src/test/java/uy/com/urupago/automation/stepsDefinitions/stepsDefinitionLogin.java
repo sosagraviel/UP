@@ -1,23 +1,17 @@
 package uy.com.urupago.automation.stepsDefinitions;
 
 
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+
 import io.cucumber.java8.En;
 import org.junit.Assert;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import uy.com.urupago.automation.POM.POMaddCustomer;
 import uy.com.urupago.automation.POM.POMloginPage;
-import uy.com.urupago.automation.POM.POMsearchCustomer;
-import uy.com.urupago.automation.config.AutomationProperties;
 
-import java.security.PrivateKey;
+import uy.com.urupago.automation.config.AutomationProperties;
 
 public class stepsDefinitionLogin implements En {
 
@@ -125,11 +119,9 @@ public class stepsDefinitionLogin implements En {
     }*/
             /*---------------------------------Valid Credentials---------------------------*/
 
-        Then("^Page Title Should be$", () -> {
-            String title="Usuario o contraseña incorrectos. Inténtelo de nuevo.";
-            int val=0;
-            if(val!=5) {//en un futuro saber la cantidad de intentos permitidos
-                if (val==0) {
+        Then("Page Title Should be {string} and {string} as {string}", (String title,String val, String pass) -> {
+            if(val!="5") {//en un futuro saber la cantidad de intentos permitidos
+                if (val.equals("") || pass.isEmpty()) {
                     driver.getPageSource().contains("Usuario o contraseña incorrectos. Inténtelo de nuevo.");//tell me if the current page has this comment "Login was unsuccessful"
                     driver.close();
                     Assert.assertTrue(true);
@@ -143,6 +135,12 @@ public class stepsDefinitionLogin implements En {
                 Assert.assertTrue(true);
             }
             Thread.sleep(3000);
+        });
+
+   /*@When("User CLick on log Out link")
+    public void user_CLick_on_log_Out_link() throws InterruptedException {
+        poMloginPage.clickOnLogOut();
+       Thread.sleep(3000);
 
         });
 

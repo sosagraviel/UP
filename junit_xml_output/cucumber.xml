@@ -1,114 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="7" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="7" time="7.318">
-    <testcase classname="Login" name="Successful Login with Valid Credentials" time="0.888">
-        <failure message="" type="java.lang.NullPointerException">
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="2.67">
+    <testcase classname="Caja" name="Apertura de caja Successes" time="0.474">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
             <![CDATA[Given I Launch Chrome Browser...............................................passed
-When I open urupago homepage................................................passed
-And User Enter UserName and password........................................failed
+When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"......undefined
+And User Enter UserName as "rgonzalez" and password as "Password.01"........skipped
 And Click on Login..........................................................skipped
-Then Page Title Should be...................................................skipped
+And Mouse move on Caja......................................................skipped
+Then user can view confirmation messages "Urupago - Apertura de caja".......skipped
 And close browser...........................................................skipped
-
-StackTrace:
-java.lang.NullPointerException
-	at uy.com.urupago.automation.stepsDefinitions.stepsDefinitionLogin.lambda$new$3(stepsDefinitionLogin.java:89)
-	at ✽.User Enter UserName and password(file:///home/graviel/graviel/projects/automation/src/test/resources/Features/Login.feature:8)
-]]>
-        </failure>
-    </testcase>
-    <testcase classname="Login" name="Unsuccessful Login Data Driven" time="1.031">
-        <failure message="" type="java.lang.NullPointerException">
-            <![CDATA[Given I Launch Chrome Browser...............................................passed
-When I open urupago homepage................................................passed
-And User Enter UserName and password........................................failed
-And Click on Login..........................................................skipped
-Then Page Title Should be...................................................skipped
-And close browser...........................................................skipped
-
-StackTrace:
-java.lang.NullPointerException
-	at uy.com.urupago.automation.stepsDefinitions.stepsDefinitionLogin.lambda$new$3(stepsDefinitionLogin.java:89)
-	at ✽.User Enter UserName and password(file:///home/graviel/graviel/projects/automation/src/test/resources/Features/Login.feature:22)
-]]>
-        </failure>
-    </testcase>
-    <testcase classname="Login" name="Unsuccessful Login Data Driven 2" time="0.816">
-        <failure message="" type="java.lang.NullPointerException">
-            <![CDATA[Given I Launch Chrome Browser...............................................passed
-When I open urupago homepage................................................passed
-And User Enter UserName and password........................................failed
-And Click on Login..........................................................skipped
-Then Page Title Should be...................................................skipped
-And close browser...........................................................skipped
-
-StackTrace:
-java.lang.NullPointerException
-	at uy.com.urupago.automation.stepsDefinitions.stepsDefinitionLogin.lambda$new$3(stepsDefinitionLogin.java:89)
-	at ✽.User Enter UserName and password(file:///home/graviel/graviel/projects/automation/src/test/resources/Features/Login.feature:22)
-]]>
-        </failure>
-    </testcase>
-    <testcase classname="Login" name="Unsuccessful Login Data Driven 3" time="0.471">
-        <failure message="" type="java.lang.NullPointerException">
-            <![CDATA[Given I Launch Chrome Browser...............................................passed
-When I open urupago homepage................................................passed
-And User Enter UserName and password........................................failed
-And Click on Login..........................................................skipped
-Then Page Title Should be...................................................skipped
-And close browser...........................................................skipped
-
-StackTrace:
-java.lang.NullPointerException
-	at uy.com.urupago.automation.stepsDefinitions.stepsDefinitionLogin.lambda$new$3(stepsDefinitionLogin.java:89)
-	at ✽.User Enter UserName and password(file:///home/graviel/graviel/projects/automation/src/test/resources/Features/Login.feature:22)
-]]>
-        </failure>
-    </testcase>
-    <testcase classname="Login" name="Try N times" time="0.477">
-        <failure message="" type="java.lang.NullPointerException">
-            <![CDATA[Given I Launch Chrome Browser...............................................passed
-When I open urupago homepage................................................passed
-And User Enter UserName and password........................................failed
-And Click on Login..........................................................skipped
-Then Page Title Should be...................................................skipped
-And close browser...........................................................skipped
-
-StackTrace:
-java.lang.NullPointerException
-	at uy.com.urupago.automation.stepsDefinitions.stepsDefinitionLogin.lambda$new$3(stepsDefinitionLogin.java:89)
-	at ✽.User Enter UserName and password(file:///home/graviel/graviel/projects/automation/src/test/resources/Features/Login.feature:41)
-]]>
-        </failure>
-    </testcase>
-    <testcase classname="Login" name="Try N times 2" time="0.501">
-        <failure message="" type="java.lang.NullPointerException">
-            <![CDATA[Given I Launch Chrome Browser...............................................passed
-When I open urupago homepage................................................passed
-And User Enter UserName and password........................................failed
-And Click on Login..........................................................skipped
-Then Page Title Should be...................................................skipped
-And close browser...........................................................skipped
-
-StackTrace:
-java.lang.NullPointerException
-	at uy.com.urupago.automation.stepsDefinitions.stepsDefinitionLogin.lambda$new$3(stepsDefinitionLogin.java:89)
-	at ✽.User Enter UserName and password(file:///home/graviel/graviel/projects/automation/src/test/resources/Features/Login.feature:41)
-]]>
-        </failure>
-    </testcase>
-    <testcase classname="Login" name="Try N times 3" time="0.513">
-        <failure message="" type="java.lang.NullPointerException">
-            <![CDATA[Given I Launch Chrome Browser...............................................passed
-When I open urupago homepage................................................passed
-And User Enter UserName and password........................................failed
-And Click on Login..........................................................skipped
-Then Page Title Should be...................................................skipped
-And close browser...........................................................skipped
-
-StackTrace:
-java.lang.NullPointerException
-	at uy.com.urupago.automation.stepsDefinitions.stepsDefinitionLogin.lambda$new$3(stepsDefinitionLogin.java:89)
-	at ✽.User Enter UserName and password(file:///home/graviel/graviel/projects/automation/src/test/resources/Features/Login.feature:41)
 ]]>
         </failure>
     </testcase>

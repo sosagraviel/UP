@@ -26,7 +26,6 @@ dependencies {
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	implementation "org.seleniumhq.selenium:selenium-java:3.141.59"
-
 	compileOnly 'org.projectlombok:lombok'
 	// https://mvnrepository.com/artifact/io.cucumber/cucumber-core
 	compile group: 'io.cucumber', name: 'cucumber-core', version: '6.2.2'
@@ -42,6 +41,18 @@ dependencies {
 	compile group: 'commons-io', name: 'commons-io', version: '2.7'
 	// https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
 	compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-alpha-6'
+	// https://mvnrepository.com/artifact/io.cucumber/gherkin
+	compile group: 'io.cucumber', name: 'gherkin', version: '14.0.1'
+// https://mvnrepository.com/artifact/io.cucumber/cucumber-gherkin
+	compile group: 'io.cucumber', name: 'cucumber-gherkin', version: '6.2.2'
+	// https://mvnrepository.com/artifact/io.cucumber/cucumber-java8
+	compile group: 'io.cucumber', name: 'cucumber-java8', version: '6.2.2'
+
+
+
+
+
+
 
 
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
@@ -70,6 +81,12 @@ dependencies {
 	testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '6.2.2'
 	// https://mvnrepository.com/artifact/io.qameta.allure/allure-junit4
 	testCompile group: 'io.qameta.allure', name: 'allure-junit4', version: '2.13.5'
+	// https://mvnrepository.com/artifact/org.testng/testng
+	testCompile group: 'org.testng', name: 'testng', version: '7.1.0'
+	// https://mvnrepository.com/artifact/info.cukes/cucumber-spring
+	testCompile group: 'info.cukes', name: 'cucumber-spring', version: '1.2.6', ext: 'pom'
+
+
 
 
 
