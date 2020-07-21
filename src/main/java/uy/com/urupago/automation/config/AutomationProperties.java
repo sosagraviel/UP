@@ -10,8 +10,12 @@ public class AutomationProperties {
 
     @Getter
     private final Drivers drivers= new Drivers();
+    private String password;
+
+    private String user;
 
     private String url;
+
 
     @Data
     public static class Drivers {

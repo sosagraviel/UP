@@ -11,13 +11,15 @@ import uy.com.urupago.automation.config.AutomationProperties;
 public class GoogleSteps implements En {
 
     @Autowired
-    private AutomationProperties properties;
+    private AutomationProperties properties;//ag
 
     private POMaddCustomer poMaddCustomer;
 
     public GoogleSteps(WebDriver driver) {
         Given("^Open the browser$", () -> {
             driver.get(properties.getUrl());
+
+
         });
 
         When("^search Cuba$", () -> {

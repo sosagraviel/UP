@@ -8,73 +8,95 @@ import io.cucumber.java.en.When;
 import io.cucumber.java8.En;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.springframework.beans.factory.annotation.Autowired;
+import uy.com.urupago.automation.POM.POMaddCustomer;
 import uy.com.urupago.automation.POM.POMloginPage;
 import uy.com.urupago.automation.POM.POMsearchCustomer;
+import uy.com.urupago.automation.config.AutomationProperties;
 
-public class stepsDefinitionLogin extends baseClass implements En {
-   /*HERE public POMloginPage poMloginPage;
-    //public POMaddCustomer addCustomer;//this class extended from base class for that i don´t need this attributes
-    //public POMsearchCustomer poMsearchCustomer;
-    //public POMCajaApertura pomCajaApertura;
-    //public String driverPath = "//home/graviel/Descargas/intelij/gecko/geckodriver";
-    final baseClass base;
+import java.security.PrivateKey;
 
-    public stepsDefinitionLogin(baseClass base){
-        this.base=base;
-    }
+public class stepsDefinitionLogin implements En {
+
+    @Autowired
+    private AutomationProperties properties;//agarra los valores definidos en las propiedades
+
+    private POMaddCustomer poMaddCustomer;
+    private POMloginPage poMloginPage;
+
+    public stepsDefinitionLogin(WebDriver driver) {
+
+        Given("^I Launch Chrome Browser", () -> {
+            driver.get(properties.getUrl());
+
+        });
 
 
-
-
-    @Given("I Launch Chrome Browser")
-    public void i_Launch_Chrome_Browser() {ENDHERE*/
+        /*Given("I Launch Chrome Browser")
+        public void i_Launch_Chrome_Browser() {
        /* logger= Logger.getLogger("noCommerce");//Added logger
         PropertyConfigurator.configure("log4j.properties");//Added Logger*/
-     //HERE   System.setProperty("webdriver.chrome.driver","//home/graviel/Descargas/intelij/chromedriver");
-        //System.setProperty("webdriver.gecko.driver", driverPath);
-      //HERE  base.basewebDriver=new ChromeDriver();
-        //base.basewebDriver=new FirefoxDriver();
-       //HERE poMloginPage=new POMloginPage(base.basewebDriver);
-     //HERE   base.poMsearchCustomer=new POMsearchCustomer(base.basewebDriver);
+             // System.setProperty("webdriver.chrome.driver","//home/graviel/Descargas/intelij/chromedriver");
+            //System.setProperty("webdriver.gecko.driver", driverPath);
+            //HERE  base.basewebDriver=new ChromeDriver();
+            //base.basewebDriver=new FirefoxDriver();
+            //poMloginPage=new POMloginPage(driver);
+            //HERE   base.poMsearchCustomer=new POMsearchCustomer(base.basewebDriver);
         /*base.poMaddCustomer=new POMaddCustomer(base.basewebDriver);
-        pomCajaApertura=new POMCajaApertura(base.basewebDriver);*/
+        pomCajaApertura=new POMCajaApertura(base.basewebDriver);
 
 
-   //HERE }
+            }*/
 
-   /*HERE @When("I open urupago homepage {string}")
+        When("^I open urupago homepage$", () -> {
+            driver.manage().window().maximize();
+        });
+
+    /*@When("I open urupago homepage {string}")
     public void i_open_orange_hrm_homepage(String url) {
         base.basewebDriver.get(url);//http://cobranza.qa.urupago.com.uy"
         base.basewebDriver.manage().window().maximize();
 
-    }
+    }*/
 
-    @Then("I verify that the logo  present on page")
+
+
+    /*@Then("I verify that the logo  present on page")
     public void i_verify_that_the_logo_present_on_page() {
         boolean status=base.basewebDriver.findElement(By.xpath("/html/body/up-root/div/up-login/div/div[2]/div/mat-card/mat-card-header/div[2]")).isDisplayed();//for is it present
         Assert.assertEquals(true,status);
-    }
+    }*/
 
-    @And("close browser")
+        Then("^close browser$", () -> {
+            driver.quit();
+        });
+
+    /*@And("close browser")
     public void close_browser() {
         base.basewebDriver.quit();
-    }ENDHERE*/
+    }*/
 
 
 
-    //*****/*/*/*/*/*/********-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-**
-    /*--------------------------------------------------BackGround-----------------------------------------*/
+            //*****/*/*/*/*/*/********-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-**
+            /*--------------------------------------------------BackGround-----------------------------------------*/
 
 
+        And("^User Enter UserName and password$", () -> {
+            poMloginPage.setUserName(properties.getUser());
+            poMloginPage.setTxtPassword(properties.getPassword());
+        });
 
-   /*HERE @And("User Enter UserName as {string} and password as {string}")
+   /*@And("User Enter UserName as {string} and password as {string}")
     public void user_Enter_Email_as_and_password_as(String user, String password) {
         //logger.info("**************Proving logging Details **********");
 
         poMloginPage.setUserName(user);
         poMloginPage.setTxtPassword(password);
-    }ENDHERE*/
+    }/*
 
    /* @And("^User Enter UserName and password$")
     public void user_Enter_Email_as_and_password_as(DataTable credentials) {
@@ -84,12 +106,16 @@ public class stepsDefinitionLogin extends baseClass implements En {
         poMloginPage.setTxtPassword(password);
     }*/
 
-    /*HERE@When("Click on Login")
+        When("^Click on Login$", () -> {
+            poMloginPage.clickOnLogin();
+            Thread.sleep(7000);
+        });
+    /*@When("Click on Login")
     public void click_on_Login() throws InterruptedException {
         //logger.info("**************Started Logging**********");
         poMloginPage.clickOnLogin();
       Thread.sleep(7000);
-    }ENDHERE*/
+    }*/
 
    /* @Then("User Can view Dashboad")
     public void user_Can_view_Dashboad() {
@@ -97,9 +123,31 @@ public class stepsDefinitionLogin extends baseClass implements En {
         Assert.assertEquals("Urupago - Cobros realizados",base.poMaddCustomer.getPageTitle());
 
     }*/
-    /*---------------------------------Valid Credentials---------------------------*/
-   /*HERE @Then("Page Title Should be {string} and {string} as {string}")
-    public void page_Title_Should_be(String title,String val, String pass) throws InterruptedException {
+            /*---------------------------------Valid Credentials---------------------------*/
+
+        Then("^Page Title Should be$", () -> {
+            String title="Usuario o contraseña incorrectos. Inténtelo de nuevo.";
+            int val=0;
+            if(val!=5) {//en un futuro saber la cantidad de intentos permitidos
+                if (val==0) {
+                    driver.getPageSource().contains("Usuario o contraseña incorrectos. Inténtelo de nuevo.");//tell me if the current page has this comment "Login was unsuccessful"
+                    driver.close();
+                    Assert.assertTrue(true);
+                } else {
+                    Assert.assertEquals(title, driver.getTitle());
+                }
+                Thread.sleep(3000);
+            }else {
+                driver.getPageSource().contains("Usuario o contraseña incorrectos. Inténtelo de nuevo.");//tell me if the current page has this comment "Login was unsuccessful"
+                driver.close();
+                Assert.assertTrue(true);
+            }
+            Thread.sleep(3000);
+
+        });
+
+   //@Then("Page Title Should be {string} and {string} as {string}")
+    /*public void page_Title_Should_be(String title,String val, String pass) throws InterruptedException {
         if(val!="5") {//en un futuro saber la cantidad de intentos permitidos
             if (val.equals("") || pass.isEmpty()) {
                 base.basewebDriver.getPageSource().contains("Usuario o contraseña incorrectos. Inténtelo de nuevo.");//tell me if the current page has this comment "Login was unsuccessful"
@@ -115,16 +163,16 @@ public class stepsDefinitionLogin extends baseClass implements En {
             Assert.assertTrue(true);
         }
         Thread.sleep(3000);
-    }ENDHERE*/
+    }*/
 
-  /*HERE  @When("User CLick on log Out link")
+   /*@When("User CLick on log Out link")
     public void user_CLick_on_log_Out_link() throws InterruptedException {
         poMloginPage.clickOnLogOut();
        Thread.sleep(3000);
-    }ENDHERE*/
+    }*/
 
 
-    /*-------------------------------------Added Customer----------------------------------------------*/
+            /*-------------------------------------Added Customer----------------------------------------------*/
 /*
     @When("User click on customer menu")
     public void user_click_on_customer_menu() throws InterruptedException {
@@ -266,7 +314,7 @@ public class stepsDefinitionLogin extends baseClass implements En {
         Thread.sleep(3000);
     }
 */
-    /*......*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*caja*-*-*-*-**-*--*-*-*-**-*-**-***-**-*-**-*.......*/
+            /*......*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*caja*-*-*-*-**-*--*-*-*-**-*-**-***-**-*-**-*.......*/
    /* @And("Mouse move on Caja")
     public void mouse_nove_on_Caja() {
         pomCajaApertura.ClickApertura();
@@ -282,7 +330,7 @@ public class stepsDefinitionLogin extends baseClass implements En {
 
 
 //-----------------------Search Customer By Email---------------------------------
-   /*HERE @When("Enter Customer first name")
+   /* @When("Enter Customer first name")
     public void enter_Customer_first_name() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
@@ -304,10 +352,28 @@ public class stepsDefinitionLogin extends baseClass implements En {
     public void user_should_found_the_name_in_the_Search_Table() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
-    }ENDHERE*/
+    }
+
+        }
+
+
+   /*HERE public POMloginPage poMloginPage;
+    //public POMaddCustomer addCustomer;//this class extended from base class for that i don´t need this attributes
+    //public POMsearchCustomer poMsearchCustomer;
+    //public POMCajaApertura pomCajaApertura;
+    //public String driverPath = "//home/graviel/Descargas/intelij/gecko/geckodriver";
+    final baseClass base;
+
+    public stepsDefinitionLogin(baseClass base){
+        this.base=base;
+    }*/
 
 
 
 
 
-}
+
+
+
+
+}}

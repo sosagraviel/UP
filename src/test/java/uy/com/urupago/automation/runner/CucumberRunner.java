@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {/*".//Feature/Caja.feature","src/test/resources/Features/Login.feature",".//Feature/Customer.feature"*/"src/test/resources/Features/google.feature"},
+        features = {/*".//Feature/Caja.feature",*/"src/test/resources/Features/Login.feature"/*,".//Feature/Customer.feature""src/test/resources/Features/google.feature"*/},
         glue = "uy.com.urupago.automation",
         dryRun = false,
         monochrome = true,

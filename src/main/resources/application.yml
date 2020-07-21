@@ -1,5 +1,7 @@
 automation:
   url: https://www.google.com
+  user: rgonzalez
+  password: Password.01
   drivers:
     chrome:
       driver-path: //home/graviel/Descargas/intelij/chromedriver
