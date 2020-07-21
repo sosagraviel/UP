@@ -12,12 +12,12 @@ import uy.com.urupago.automation.utilities.WaitHelper;
 import java.util.List;
 
 public class POMsearchCustomer implements En {
-    public WebDriver webDriver;
+    public WebDriver webDrivers;
     public WaitHelper waitHelper;
 
     public POMsearchCustomer(WebDriver driver){
-        webDriver=driver;
-        waitHelper=new WaitHelper(webDriver);
+        webDrivers=driver;
+        waitHelper=new WaitHelper(webDrivers);
     }
 
     @FindBy(how = How.XPATH, using = "SearchEmail")
@@ -98,11 +98,11 @@ public class POMsearchCustomer implements En {
         waitHelper.WaitForElement(btnSearch,30);
     }
     public int getNoOfRows(){
-        List <WebElement> tableRows=webDriver.findElements(By.xpath("//div/table/tbody/tr"));
+        List <WebElement> tableRows=webDrivers.findElements(By.xpath("//div/table/tbody/tr"));
         return(tableRows.size());
     }
     public int getNoOfColumns(){
-        List <WebElement> tableColumns=webDriver.findElements(By.xpath("html/body/up-root/div/up-dashboard/mat-drawer-container/mat-drawer-content/div/up-users-list/up-data-table/up-panel/mat-card/mat-card-content/perfect-scrollbar/div/div[1]/div/td-data-table/div/table/tbody/tr/td"));
+        List <WebElement> tableColumns=webDrivers.findElements(By.xpath("html/body/up-root/div/up-dashboard/mat-drawer-container/mat-drawer-content/div/up-users-list/up-data-table/up-panel/mat-card/mat-card-content/perfect-scrollbar/div/div[1]/div/td-data-table/div/table/tbody/tr/td"));
         return (tableColumns.size());
     }
 
@@ -123,7 +123,7 @@ public class POMsearchCustomer implements En {
     public boolean searchByUser(String user){
         boolean flag=false;
         for (int i=1; i<getNoOfRows(); i++){
-            String userId=webDriver.findElement(By.xpath("//table/tbody/tr["+i+"]/td[4]")).getText();
+            String userId=webDrivers.findElement(By.xpath("//table/tbody/tr["+i+"]/td[4]")).getText();
             System.out.println(userId);
             if (userId.equals(user)){
                 flag=true;
@@ -135,7 +135,7 @@ public class POMsearchCustomer implements En {
 
     /*return the first user in the table*/
     public String getSearchByUser(){
-           String userId=webDriver.findElement(By.xpath("//table/tbody/tr[1]/td[4]")).getText();
+           String userId=webDrivers.findElement(By.xpath("//table/tbody/tr[1]/td[4]")).getText();
             System.out.println(userId);
         return userId;
     }
@@ -143,7 +143,7 @@ public class POMsearchCustomer implements En {
     //return the first email in the table
     public String getSearchByEmail(){
 
-        String userId=webDriver.findElement(By.xpath("//table/tbody/tr[1]/td[7]")).getText();
+        String userId=webDrivers.findElement(By.xpath("//table/tbody/tr[1]/td[7]")).getText();
         System.out.println(userId);
 
         return userId;

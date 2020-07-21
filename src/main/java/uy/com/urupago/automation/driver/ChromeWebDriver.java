@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import uy.com.urupago.automation.config.AutomationProperties;
 
+
 @RequiredArgsConstructor
 @Configuration
 @Profile("chrome")
@@ -16,9 +17,11 @@ public class ChromeWebDriver {
 
     private final AutomationProperties properties;
 
+
+
     @Bean
     public WebDriver webDriver() {
-        //System.setProperty("webdriver.chrome.driver", properties.getDrivers().getChrome().getDriverPath());
+        System.setProperty("webdriver.chrome.driver", properties.getDrivers().getChrome().getDriverPath());
         System.setProperty("webdriver.chrome.logfile", "chromedriver.log");
         System.setProperty("webdriver.chrome.verboseLogging", "true");
         ChromeOptions options = new ChromeOptions();

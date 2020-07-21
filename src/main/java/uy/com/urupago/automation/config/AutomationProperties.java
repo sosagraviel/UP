@@ -1,14 +1,17 @@
 package uy.com.urupago.automation.config;
 
-import lombok.Data;
-import lombok.Getter;
+import lombok.*;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
+@Data
 @ConfigurationProperties(prefix = "automation")
 public class AutomationProperties {
 
     @Getter
-    private final Drivers drivers = new Drivers();
+    private final Drivers drivers= new Drivers();
+
+    private String url;
 
     @Data
     public static class Drivers {
@@ -25,16 +28,17 @@ public class AutomationProperties {
         @Data
         public static class Browser {
             private String driverPath;
+            private String os="linux";
         }
-
+        @Data
         public static class Chrome extends Browser {
-
+            private String driverPath;
         }
-
+        @Data
         public static class Firefox extends Browser {
-
+            private String driverPath;
         }
-
+        @Data
         public static class Remote extends Browser {
 
         }

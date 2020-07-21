@@ -21,7 +21,7 @@ public class stepsAddCustomer extends baseClass{
 
     @Then("User Can view Dashboad")
     public void user_Can_view_Dashboad() {
-        poMaddCustomer=new POMaddCustomer(base.basewebDriver);
+//        poMaddCustomer=new POMaddCustomer(base.basewebDriver);
         Assert.assertEquals("Urupago - Cobros realizados",poMaddCustomer.getPageTitle());
 
     }

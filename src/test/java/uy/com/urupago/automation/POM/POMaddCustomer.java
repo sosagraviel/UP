@@ -5,16 +5,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 public class POMaddCustomer implements En {
+
     public WebDriver webDriver;
 
-    public POMaddCustomer(WebDriver rdriver){
-        webDriver=rdriver;
-        PageFactory.initElements(webDriver,this);
+    public POMaddCustomer(WebDriver webDriver) {
+        this.webDriver = webDriver;
     }
+
     By lnkCustomers_menu =By.xpath("//a[@href='#']//span[contains(text(),'Customers')]");
     By lnkCustomers_menuitem =By.xpath("/html/body/div[3]/div[2]/div/ul/li[4]/ul/li[1]/a/span");
     By btnAddnew =By.xpath("//a[@class='btn bg-blue']");

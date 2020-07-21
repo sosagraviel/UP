@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = {/*".//Feature/Caja.feature","src/test/resources/Features/Login.feature",".//Feature/Customer.feature"*/"src/test/resources/Features/google.feature"},
         glue = "uy.com.urupago.automation",
         dryRun = false,
-        //monochrome = true,
+        monochrome = true,
         plugin = {
                 "html:reports/default-report", "pretty",
                 "junit:junit_xml_output/cucumber.xml",

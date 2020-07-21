@@ -1,12 +1,12 @@
 automation:
+  url: https://www.google.com
   drivers:
     chrome:
-      driver-path: a
+      driver-path: //home/graviel/Descargas/intelij/chromedriver
     firefox:
-      driver-path: b
+      driver-path: //home/graviel/Descargas/intelij/gecko/geckodriver
     remote:
-      driver-path: c
-
+      driver-path: s
 spring:
   profiles:
     active: chrome
