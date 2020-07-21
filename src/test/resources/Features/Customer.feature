@@ -4,8 +4,8 @@ Feature: Customers
 
   Background: Below are the common steps for each scenario
     Given I Launch Chrome Browser
-    When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"
-    And User Enter UserName as "rgonzalez" and password as "Password.01"/home/graviel/graviel/projects/uruPago
+    When I open urupago homepage
+    And User Enter UserName and password
     And Click on Login
     Then User Can view Dashboad
     When User click on customer menu

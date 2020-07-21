@@ -1,13 +1,122 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="2.67">
-    <testcase classname="Caja" name="Apertura de caja Successes" time="0.474">
+<testsuite errors="0" failures="7" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="7" time="4.357">
+    <testcase classname="Customers" name="Add Customers" time="0.489">
         <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
             <![CDATA[Given I Launch Chrome Browser...............................................passed
 When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"......undefined
-And User Enter UserName as "rgonzalez" and password as "Password.01"........skipped
+And User Enter UserName as "rgonzalez" and password as "Password.01"/home/graviel/graviel/projects/uruPago.skipped
 And Click on Login..........................................................skipped
-And Mouse move on Caja......................................................skipped
-Then user can view confirmation messages "Urupago - Apertura de caja".......skipped
+Then User Can view Dashboad.................................................skipped
+When User click on customer menu............................................skipped
+And Click on Add new button.................................................skipped
+Then user can view add customer page........................................skipped
+When User enter customer info...............................................skipped
+And click on save button....................................................skipped
+Then user can view confirmation message "Urupago - Usuarios"................skipped
+And close browser...........................................................skipped
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Customers" name="Add Same Customers User" time="0.277">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
+            <![CDATA[Given I Launch Chrome Browser...............................................passed
+When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"......undefined
+And User Enter UserName as "rgonzalez" and password as "Password.01"/home/graviel/graviel/projects/uruPago.skipped
+And Click on Login..........................................................skipped
+Then User Can view Dashboad.................................................skipped
+When User click on customer menu............................................skipped
+And Click on Add new button.................................................skipped
+Then user can view add customer page........................................skipped
+When User enter customer info same user.....................................skipped
+Then user can view confirmation message error "Usuario no disponible".......skipped
+And close browser...........................................................skipped
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Customers" name="Add Same Customers Email" time="0.248">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
+            <![CDATA[Given I Launch Chrome Browser...............................................passed
+When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"......undefined
+And User Enter UserName as "rgonzalez" and password as "Password.01"/home/graviel/graviel/projects/uruPago.skipped
+And Click on Login..........................................................skipped
+Then User Can view Dashboad.................................................skipped
+When User click on customer menu............................................skipped
+And Click on Add new button.................................................skipped
+Then user can view add customer page........................................skipped
+When User enter customer info same email....................................skipped
+Then user can view confirmation message error "Usuario no disponible".......skipped
+And close browser...........................................................skipped
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Customers" name="Add customer with blank fields" time="0.259">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
+            <![CDATA[Given I Launch Chrome Browser...............................................passed
+When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"......undefined
+And User Enter UserName as "rgonzalez" and password as "Password.01"/home/graviel/graviel/projects/uruPago.skipped
+And Click on Login..........................................................skipped
+Then User Can view Dashboad.................................................skipped
+When User click on customer menu............................................skipped
+And Click on Add new button.................................................skipped
+Then user can view add customer page........................................skipped
+When User enter customer info in blank......................................skipped
+Then click on save button disable...........................................skipped
+And close browser...........................................................skipped
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Customers" name="Cancel Customers" time="0.233">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
+            <![CDATA[Given I Launch Chrome Browser...............................................passed
+When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"......undefined
+And User Enter UserName as "rgonzalez" and password as "Password.01"/home/graviel/graviel/projects/uruPago.skipped
+And Click on Login..........................................................skipped
+Then User Can view Dashboad.................................................skipped
+When User click on customer menu............................................skipped
+And Click on Add new button.................................................skipped
+Then user can view add customer page........................................skipped
+When User enter customer info...............................................skipped
+And click on cancel button..................................................skipped
+Then User should found email in the search table............................skipped
+And close browser...........................................................skipped
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Customers" name="Search Customer by Email" time="0.221">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
+            <![CDATA[Given I Launch Chrome Browser...............................................passed
+When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"......undefined
+And User Enter UserName as "rgonzalez" and password as "Password.01"/home/graviel/graviel/projects/uruPago.skipped
+And Click on Login..........................................................skipped
+Then User Can view Dashboad.................................................skipped
+When User click on customer menu............................................skipped
+And Click on Add new button.................................................skipped
+Then user can view add customer page........................................skipped
+When User click on customer menu............................................skipped
+And Click on customers menu item............................................skipped
+And Enter Customer Email....................................................skipped
+When click on search button.................................................skipped
+Then User should found email in the search table............................skipped
+And close browser...........................................................skipped
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="Customers" name="Search Customer by Name" time="0.28">
+        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
+            <![CDATA[Given I Launch Chrome Browser...............................................passed
+When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"......undefined
+And User Enter UserName as "rgonzalez" and password as "Password.01"/home/graviel/graviel/projects/uruPago.skipped
+And Click on Login..........................................................skipped
+Then User Can view Dashboad.................................................skipped
+When User click on customer menu............................................skipped
+And Click on Add new button.................................................skipped
+Then user can view add customer page........................................skipped
+When User click on customer menu............................................skipped
+And Click on customers menu item............................................skipped
+And Enter Customer first name...............................................skipped
+And Enter Customer Last name................................................skipped
+When Click on Search Button.................................................skipped
+Then User should found the name in the Search Table.........................skipped
 And close browser...........................................................skipped
 ]]>
         </failure>
