@@ -1,6 +1,8 @@
 package uy.com.urupago.automation.POM;
 
+
 import io.cucumber.java8.En;
+import io.cucumber.spring.ScenarioScope;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,9 +10,12 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.springframework.stereotype.Component;
 import uy.com.urupago.automation.utilities.WaitHelper;
 
-public class POMloginPage implements En {
+@Component
+@ScenarioScope
+public class POMloginPage{
 
     public WebDriver driver;
 
@@ -21,8 +26,6 @@ public class POMloginPage implements En {
         PageFactory.initElements(rdriver,this);
         //waitHelper=new WaitHelper(driver);
     }
-
-
 
     @FindBy(id = "username")
     @CacheLookup

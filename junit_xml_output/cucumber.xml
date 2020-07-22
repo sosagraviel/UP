@@ -1,123 +1,109 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="7" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="7" time="4.357">
-    <testcase classname="Customers" name="Add Customers" time="0.489">
-        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
+<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="32.475">
+    <testcase classname="Login" name="Successful Login with Valid Credentials" time="29.862">
+        <system-out>
             <![CDATA[Given I Launch Chrome Browser...............................................passed
-When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"......undefined
-And User Enter UserName as "rgonzalez" and password as "Password.01"/home/graviel/graviel/projects/uruPago.skipped
+When I open urupago homepage................................................passed
+And User Enter "rgonzalez" and "Password.01"................................passed
+And Click on Login..........................................................passed
+Then Page Title Should be "Urupago - Cobros realizados" and "<value>" as "<password>".passed
+And close browser...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Login" name="Unsuccessful Login Data Driven" time="0.019">
+        <failure message="invalid session id&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'graviel-Lenovo-IdeaPad-S340-15IIL', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-42-generic', java.version: '11.0.7'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.89, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: /tmp/.com.google.Chrome.2zGT3V}, goog:chromeOptions: {debuggerAddress: localhost:37035}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: f762e7a94c5cf80aee511b2ae42cf377" type="org.openqa.selenium.NoSuchSessionException">
+            <![CDATA[Given I Launch Chrome Browser...............................................failed
+When I open urupago homepage................................................skipped
+And User Enter "rgonzalez" and "Password.01"................................skipped
 And Click on Login..........................................................skipped
-Then User Can view Dashboad.................................................skipped
-When User click on customer menu............................................skipped
-And Click on Add new button.................................................skipped
-Then user can view add customer page........................................skipped
-When User enter customer info...............................................skipped
-And click on save button....................................................skipped
-Then user can view confirmation message "Urupago - Usuarios"................skipped
+Then Page Title Should be "Urupago - Login" and "admin" as "admin"..........skipped
 And close browser...........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'graviel-Lenovo-IdeaPad-S340-15IIL', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-42-generic', java.version: '11.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.89, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: /tmp/.com.google.Chrome.2zGT3V}, goog:chromeOptions: {debuggerAddress: localhost:37035}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f762e7a94c5cf80aee511b2ae42cf377
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at uy.com.urupago.automation.stepsDefinitions.stepsDefinitionLogin.lambda$new$0(stepsDefinitionLogin.java:31)
+	at ✽.I Launch Chrome Browser(file:///home/graviel/graviel/projects/automation/src/test/resources/Features/Login.feature:19)
 ]]>
         </failure>
     </testcase>
-    <testcase classname="Customers" name="Add Same Customers User" time="0.277">
-        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
-            <![CDATA[Given I Launch Chrome Browser...............................................passed
-When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"......undefined
-And User Enter UserName as "rgonzalez" and password as "Password.01"/home/graviel/graviel/projects/uruPago.skipped
+    <testcase classname="Login" name="Unsuccessful Login Data Driven 2" time="0.01">
+        <failure message="invalid session id&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'graviel-Lenovo-IdeaPad-S340-15IIL', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-42-generic', java.version: '11.0.7'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.89, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: /tmp/.com.google.Chrome.2zGT3V}, goog:chromeOptions: {debuggerAddress: localhost:37035}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: f762e7a94c5cf80aee511b2ae42cf377" type="org.openqa.selenium.NoSuchSessionException">
+            <![CDATA[Given I Launch Chrome Browser...............................................failed
+When I open urupago homepage................................................skipped
+And User Enter "rgonzalez" and "Password.01"................................skipped
 And Click on Login..........................................................skipped
-Then User Can view Dashboad.................................................skipped
-When User click on customer menu............................................skipped
-And Click on Add new button.................................................skipped
-Then user can view add customer page........................................skipped
-When User enter customer info same user.....................................skipped
-Then user can view confirmation message error "Usuario no disponible".......skipped
+Then Page Title Should be "Urupago - Login" and "" as "admin"...............skipped
 And close browser...........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'graviel-Lenovo-IdeaPad-S340-15IIL', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-42-generic', java.version: '11.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.89, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: /tmp/.com.google.Chrome.2zGT3V}, goog:chromeOptions: {debuggerAddress: localhost:37035}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f762e7a94c5cf80aee511b2ae42cf377
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at uy.com.urupago.automation.stepsDefinitions.stepsDefinitionLogin.lambda$new$0(stepsDefinitionLogin.java:31)
+	at ✽.I Launch Chrome Browser(file:///home/graviel/graviel/projects/automation/src/test/resources/Features/Login.feature:19)
 ]]>
         </failure>
     </testcase>
-    <testcase classname="Customers" name="Add Same Customers Email" time="0.248">
-        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
-            <![CDATA[Given I Launch Chrome Browser...............................................passed
-When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"......undefined
-And User Enter UserName as "rgonzalez" and password as "Password.01"/home/graviel/graviel/projects/uruPago.skipped
+    <testcase classname="Login" name="Unsuccessful Login Data Driven 3" time="0.019">
+        <failure message="invalid session id&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'graviel-Lenovo-IdeaPad-S340-15IIL', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-42-generic', java.version: '11.0.7'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.89, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: /tmp/.com.google.Chrome.2zGT3V}, goog:chromeOptions: {debuggerAddress: localhost:37035}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}&#10;Session ID: f762e7a94c5cf80aee511b2ae42cf377" type="org.openqa.selenium.NoSuchSessionException">
+            <![CDATA[Given I Launch Chrome Browser...............................................failed
+When I open urupago homepage................................................skipped
+And User Enter "rgonzalez" and "Password.01"................................skipped
 And Click on Login..........................................................skipped
-Then User Can view Dashboad.................................................skipped
-When User click on customer menu............................................skipped
-And Click on Add new button.................................................skipped
-Then user can view add customer page........................................skipped
-When User enter customer info same email....................................skipped
-Then user can view confirmation message error "Usuario no disponible".......skipped
+Then Page Title Should be "Urupago - Login" and "admin" as ""...............skipped
 And close browser...........................................................skipped
-]]>
-        </failure>
-    </testcase>
-    <testcase classname="Customers" name="Add customer with blank fields" time="0.259">
-        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
-            <![CDATA[Given I Launch Chrome Browser...............................................passed
-When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"......undefined
-And User Enter UserName as "rgonzalez" and password as "Password.01"/home/graviel/graviel/projects/uruPago.skipped
-And Click on Login..........................................................skipped
-Then User Can view Dashboad.................................................skipped
-When User click on customer menu............................................skipped
-And Click on Add new button.................................................skipped
-Then user can view add customer page........................................skipped
-When User enter customer info in blank......................................skipped
-Then click on save button disable...........................................skipped
-And close browser...........................................................skipped
-]]>
-        </failure>
-    </testcase>
-    <testcase classname="Customers" name="Cancel Customers" time="0.233">
-        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
-            <![CDATA[Given I Launch Chrome Browser...............................................passed
-When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"......undefined
-And User Enter UserName as "rgonzalez" and password as "Password.01"/home/graviel/graviel/projects/uruPago.skipped
-And Click on Login..........................................................skipped
-Then User Can view Dashboad.................................................skipped
-When User click on customer menu............................................skipped
-And Click on Add new button.................................................skipped
-Then user can view add customer page........................................skipped
-When User enter customer info...............................................skipped
-And click on cancel button..................................................skipped
-Then User should found email in the search table............................skipped
-And close browser...........................................................skipped
-]]>
-        </failure>
-    </testcase>
-    <testcase classname="Customers" name="Search Customer by Email" time="0.221">
-        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
-            <![CDATA[Given I Launch Chrome Browser...............................................passed
-When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"......undefined
-And User Enter UserName as "rgonzalez" and password as "Password.01"/home/graviel/graviel/projects/uruPago.skipped
-And Click on Login..........................................................skipped
-Then User Can view Dashboad.................................................skipped
-When User click on customer menu............................................skipped
-And Click on Add new button.................................................skipped
-Then user can view add customer page........................................skipped
-When User click on customer menu............................................skipped
-And Click on customers menu item............................................skipped
-And Enter Customer Email....................................................skipped
-When click on search button.................................................skipped
-Then User should found email in the search table............................skipped
-And close browser...........................................................skipped
-]]>
-        </failure>
-    </testcase>
-    <testcase classname="Customers" name="Search Customer by Name" time="0.28">
-        <failure message="The scenario has pending or undefined step(s)" type="java.lang.Exception">
-            <![CDATA[Given I Launch Chrome Browser...............................................passed
-When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"......undefined
-And User Enter UserName as "rgonzalez" and password as "Password.01"/home/graviel/graviel/projects/uruPago.skipped
-And Click on Login..........................................................skipped
-Then User Can view Dashboad.................................................skipped
-When User click on customer menu............................................skipped
-And Click on Add new button.................................................skipped
-Then user can view add customer page........................................skipped
-When User click on customer menu............................................skipped
-And Click on customers menu item............................................skipped
-And Enter Customer first name...............................................skipped
-And Enter Customer Last name................................................skipped
-When Click on Search Button.................................................skipped
-Then User should found the name in the Search Table.........................skipped
-And close browser...........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'graviel-Lenovo-IdeaPad-S340-15IIL', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-42-generic', java.version: '11.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.89, chrome: {chromedriverVersion: 84.0.4147.30 (48b3e868b4cc0..., userDataDir: /tmp/.com.google.Chrome.2zGT3V}, goog:chromeOptions: {debuggerAddress: localhost:37035}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f762e7a94c5cf80aee511b2ae42cf377
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+	at uy.com.urupago.automation.stepsDefinitions.stepsDefinitionLogin.lambda$new$0(stepsDefinitionLogin.java:31)
+	at ✽.I Launch Chrome Browser(file:///home/graviel/graviel/projects/automation/src/test/resources/Features/Login.feature:19)
 ]]>
         </failure>
     </testcase>

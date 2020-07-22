@@ -10,12 +10,8 @@ public class AutomationProperties {
 
     @Getter
     private final Drivers drivers= new Drivers();
-    private String password;
-
-    private String user;
-
+    @Getter
     private String url;
-
 
     @Data
     public static class Drivers {
@@ -32,7 +28,6 @@ public class AutomationProperties {
         @Data
         public static class Browser {
             private String driverPath;
-            private String os="linux";
         }
         @Data
         public static class Chrome extends Browser {

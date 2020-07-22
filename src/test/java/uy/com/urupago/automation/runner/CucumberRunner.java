@@ -1,14 +1,15 @@
 package uy.com.urupago.automation.runner;
 
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {/*"/"src/test/resources/Features/Caja.feature",*/"src/test/resources/Features/Customer.feature"/*,".//Feature/Customer.feature""src/test/resources/Features/google.feature"*/},
+        features = {/*"/"src/test/resources/Features/Caja.feature",*/"src/test/resources/Features/Login.feature"/*,".//Feature/Customer.feature""src/test/resources/Features/google.feature"*/},
+        tags = "@SmokeTest and @RegressionTest",
         glue = "uy.com.urupago.automation",
         dryRun = false,
         monochrome = true,
@@ -19,7 +20,7 @@ import org.junit.runner.RunWith;
         },
         strict = true
 
-       //tags = {"@SmokeTest","@RegressionTest"}
+
 )
 public class CucumberRunner {
 }

@@ -5,23 +5,21 @@ Feature: Login
   Scenario: Successful Login with Valid Credentials
     Given I Launch Chrome Browser
     When I open urupago homepage
-    And User Enter UserName and password
+    And User Enter "rgonzalez" and "Password.01"
     #And User Enter UserName as "rgonzalez" and password as "Password.01"
     And Click on Login
     #Then Page Title Should bes "<value>"
     Then Page Title Should be "Urupago - Cobros realizados" and "<value>" as "<password>"
     And close browser
 
-
-
-     #Login Usuario o contraseña incorrecta
+ #Login Usuario o contraseña incorrecta
   #Login Usuario o contraseña vacíos
   @SmokeTest @RegressionTest
   Scenario Outline: Unsuccessful Login Data Driven
     Given I Launch Chrome Browser
     When I open urupago homepage
    # When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"
-    And User Enter UserName and password
+    And User Enter "rgonzalez" and "Password.01"
     #And User Enter UserName as "<user>" and password as "<password>"
     And Click on Login
     #Then Page Title Should be
@@ -34,13 +32,13 @@ Feature: Login
       ||admin|2|
       |admin||3|
 
-    #Login bloqueo de contraseña con N intentos fallidos
+ #Login bloqueo de contraseña con N intentos fallidos
   @RegressionTest
   Scenario Outline: Try N times
     Given I Launch Chrome Browser
     When I open urupago homepage
     #When I open urupago homepage "http://cobranza.qa.urupago.com.uy/login"
-    And User Enter UserName and password
+    And User Enter "rgonzalez" and "Password.01"
     #And User Enter UserName as "<user>" and password as "<password>"
     And Click on Login
    # Then Page Title Should be
